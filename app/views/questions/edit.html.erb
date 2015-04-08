@@ -1,0 +1,32 @@
+<h1>Edit Question</h1>
+ 
+ <div class="row">
+   <div class="col-md-4">
+     <p>Guidelines for questions</p>
+     <ul>
+       <li>Provide background info</li>
+       <li>Check your question exists</li>
+       <li>Why are you using questions here, use Quora! Nah, just kidding it's way better here</li>
+     </ul>
+   </div>
+   <div class="col-md-8">
+     <%= form_for @question do |f| %>
+       <div class="form-group">
+         <%= f.label :title %>
+         <%= f.text_field :title, class: 'form-control', placeholder: "Enter question title" %>
+       </div>
+       <div class="form-group">
+         <%= f.label :body %>
+         <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter question body" %>
+       </div>
+       <div class="form-group">
+         <%= f.label :resolved %>
+         <%= f.check_box :resolved %>
+       </div>
+       <div class="form-group">
+         <%= f.submit "Save", class: 'btn btn-success' %>
+       </div>
+     <% end %>
+   </div>
+   <p>Or, <%= button_to 'delete it!', @question, method: :delete, confirm: 'Are you sure?' %>
+ </div>
