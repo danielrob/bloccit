@@ -16,6 +16,14 @@ require 'faker'
      body: Faker::Lorem.paragraph
    )
  end
+
+  50.times do
+   Advertisement.create!(
+     title:  "Win Love, Success & Wisdom!",
+     copy:   "Just give me all your money",
+     price:  4
+   )
+ end
  
  puts "Seed finished"
  puts "#{Post.count} posts created"
