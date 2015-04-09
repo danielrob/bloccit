@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
    def moderator?
      role == 'moderator'
    end
+
+   def admin_or_moderator?
+      (admin? && moderator?)
+   end
 end
