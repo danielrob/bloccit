@@ -9,6 +9,7 @@
      <p class="lead"><%= @topic.description %></p>
      <% @posts.each do |post| %>
        <div class="media">
+         <%= image_tag(post.image.post.url, class: 'media-object pull-left') if post.image? %>
          <div class="media-body">
            <h4 class="media-heading">
              <%= link_to (markdown_to_html post.title), [@topic, post] %>
